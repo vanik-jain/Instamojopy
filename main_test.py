@@ -2,21 +2,17 @@ import webtest
 
 import main
 
-
-def test_get():
-    app = webtest.TestApp(main.app)
-
-    response = app.get('/')
-
-    assert response.status_int == 200
-assert response.body == 'Hello, World!'
-
-import webtest
-
-import main
-
 import requests
+
 import json
+
+def test_index():
+    main.app.testing = True
+    client = main.app.test_client()
+
+    r = client.get('/')
+    assert r.status_code == 200
+assert 'Hello World' in r.data.decode('utf-8')
 
 def test_get():
     app = webtest.TestApp(main.app)
