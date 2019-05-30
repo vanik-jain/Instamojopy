@@ -24,7 +24,7 @@ def hello():
     'cache-control': "no-cache"
     }
 
-    response = requests.request("POST",  "https://instamojo.com/oauth2/token/", data=payload, headers=headers)
+    response = requests.request("POST", "https://api.instamojo.com/oauth2/token/", data=payload, headers=headers)
     token = env + str(json.loads(response.text))
 
     return token
