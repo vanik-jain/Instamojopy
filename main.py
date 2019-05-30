@@ -1,5 +1,7 @@
 from flask import Flask
+import requests
 
+import json
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 # called `app` in `main.py`.
@@ -11,9 +13,7 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
-import requests
 
-import json
 
 client_id = "CBzDgynYEWxICcKYHxWSQfUvoY5inUnQqqeFcICe"
 client_secret = "TykXXhbl06Yp0ifGrsdWGabKeeBU5nhEC29ivceMhQpz78BM5AJ4l1G5ShfT3rYAcnndBfFvkOtCNjfsYUgUadoNW3FEYP1LVMIxfdmhdAZ9ZhmsBoSQGPeH1Q1ZGhA9"
