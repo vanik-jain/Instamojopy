@@ -25,7 +25,7 @@ def hello():
     }
 
     response = requests.request("POST", "https://api.instamojo.com/oauth2/token/", data=payload, headers=headers)
-    token = env + str(json.loads(response.text))
+    token = env + json.loads(response.text)["access_token"]
 
     return token
 
