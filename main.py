@@ -15,8 +15,8 @@ def hello():
     env = "production"
 
     if (client_id.startswith("test")):
-    url = "https://test.instamojo.com/oauth2/token/"
-    env = "test"
+        url = "https://test.instamojo.com/oauth2/token/"
+        env = "test"
 
     payload = "grant_type=client_credentials&client_id=" + client_id + "&client_secret=" + client_secret
     headers = {
